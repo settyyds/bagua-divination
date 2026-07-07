@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: bagua-api
+    runtime: docker
+    repo: https://github.com/Sudo-Biao/suangua
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_HOST
+        value: 0.0.0.0
+      - key: APP_PORT
+        value: "8888"
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: "false"
+    healthCheckPath: /health
+    autoDeploy: true
