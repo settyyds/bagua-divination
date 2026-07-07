@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  bagua-api:
+    build: .
+    container_name: bagua-api
+    ports:
+      - "8888:8888"
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8888
+      - APP_ENV=production
+      - DEBUG=false
+    restart: unless-stopped
+    volumes:
+      - ./knowledge_cache:/app/knowledge_cache
