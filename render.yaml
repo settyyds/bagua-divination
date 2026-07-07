@@ -2,7 +2,6 @@ services:
   - type: web
     name: bagua-api
     runtime: docker
-    repo: https://github.com/Sudo-Biao/suangua
     plan: free
     region: singapore
     dockerfilePath: ./Dockerfile
